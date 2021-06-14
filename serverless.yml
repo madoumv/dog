@@ -1,0 +1,23 @@
+component: express
+name: jd_cookie
+app: GetJDCookies
+
+inputs:
+  src:
+    src: ./
+  region: ap-guangzhou
+  runtime: Nodejs12.16
+  functionName: jd_cookie
+  functionConf:
+    timeout: 10
+    environment:
+      variables:
+        QYWX_KEY: ''
+        QYWX_AM: ''
+        UPDATE_API: ''
+  entryFile: index.js
+  apigatewayConf:
+    protocols:
+      - http
+      - https
+    environment: release
